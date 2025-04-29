@@ -1,0 +1,33 @@
+@startuml
+' State diagram for the Car component
+[*] --> Off
+Off --> Idle
+Idle --> Driving
+Idle --> Parked
+Idle --> Off
+Driving --> Idle
+Parked --> Idle
+
+' State diagram for the Engine component
+state Engine {
+    [*] --> Off
+    Off --> On
+    On --> Off
+}
+
+' State diagram for the Doors component
+state Doors {
+    [*] --> Locked
+    Locked --> Unlocked
+    Unlocked --> Locked
+}
+
+' State diagram for the FuelSystem component
+state FuelSystem {
+    [*] --> Empty
+    Empty --> Low
+    Low --> Full
+    Low --> Empty
+    Full --> Low
+}
+@enduml
